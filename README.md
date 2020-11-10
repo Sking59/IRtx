@@ -1,2 +1,2 @@
 # IRtx
-This is the repository for Team ?? IRtx project files
+This will be for documents related to the IRx project
