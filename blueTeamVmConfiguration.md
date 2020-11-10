@@ -4,21 +4,23 @@
 sudo apt update
 sudo apt upgrade  
 
+#### Now install the prerequisites ####
 
+sudo apt install tclx tcllib tcl-tls iwidgets4 wish nmap gcc make perl  
+
+#### Download and install sguil ####
 cd ~/Downloads
 wget https://github.com/bammv/sguil/archive/v0.9.0.tar.gz
 
 cd /opt
-sudo tar -xvzf ~/Downloads/v0.9.0.tar.gz
-cd sguil-0.9.0/client
+sudo tar -xvzf ~/Downloads/v0.9.0.tar.gz  
 
-edit sguil.tk and under exec wish "$0" "$@" add the following line
-
-cd /opt/sguil-0.9.0/client
-
+#### Edit the sguil.tk file ####
 sudo nano /opt/sguil-0.9.0/client/sguil.tk
 
-so first 5 lines should appear as follows:
+Under the line  **exec wish "$0" "$@"** add the following line:    
+cd /opt/sguil-0.9.0/client  
+so first 5 lines should appear as follows:  
 
       #!/bin/sh  
       # Run wish from users PATH \
