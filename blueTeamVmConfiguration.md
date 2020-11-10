@@ -48,7 +48,9 @@ chmod a+x ~/Desktop/Sguil_Client.desktop
  ### install Wireshark ###
 
 sudo apt install wireshark  
-say Yes to Should non-superusers be able to capture packets?
+say Yes to Should non-superusers be able to capture packets?  
+sudo ln -s /usr/bin/wireshark /usr/sbin/wireshark  
+
 
 ### Install and configure Network Miner ###
 sudo apt install gnupg ca-certificates
