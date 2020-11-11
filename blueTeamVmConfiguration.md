@@ -1,4 +1,18 @@
 ## Blue Team Ubuntu Machine ##
+
+## Instructor Section ##
+Instructors will need to allow analyst access to the Security Onion (SO) VM.
+This is done by logging into the SO vm, open a terminal and issue the following command:  
+*sudo so-allow*  
+From the menu options, select option **A - analyst**  
+Now enter the subnet range you want to have access. This will be:  
+*192.168.0.0/24*  
+
+This is all that the instructor will need to do.
+
+## Student instructions ##
+
+
 ### Install and configure Sguil Client ###
 
 sudo apt update
@@ -23,7 +37,7 @@ cd /opt/sguil-0.9.0/client
 so first 5 lines should appear as follows:  
 
       #!/bin/sh  
-      # Run wish from users PATH \
+      # Run wish from users PATH \  
         exec wish "$0" "$@"
         cd /opt/sguil-0.9.0/client
       # $Id: sguil.tk,v 1.264 2012/09/05 00:38:45 bamm Exp $ #
@@ -49,9 +63,11 @@ chmod a+x ~/Desktop/Sguil_Client.desktop
 
  ### install Wireshark ###
 
-sudo apt install wireshark  
+sudo apt install wireshark-qt  
 say Yes to Should non-superusers be able to capture packets?  
 sudo ln -s /usr/bin/wireshark /usr/sbin/wireshark  
+
+Check to see if you can access Wireshark from a Sguil entry.
 
 
 ### Install and configure Network Miner ###
@@ -64,11 +80,11 @@ echo "deb https://download.mono-project.com/repo/ubuntu stable-bionic main" | su
 sudo apt update  
 sudo apt install mono-complete  
 Download Network miner from https://www.netresec.com/?download=NetworkMiner  
-sudo unzip ~/Downloads/NetworkMiner*.zip -d /opt/  
-cd /opt/NetworkMiner*  
+sudo unzip ~/Downloads/NetworkMiner<tab>.zip -d /opt/   
+cd /opt/NetworkMiner<tab>  
 sudo chmod +x NetworkMiner.exe  
 sudo chmod -R go+w AssembledFiles/  
-sudo chmod -R go+w Captures/  
+sudo chmod -R go+w Captures/    
 
  #### Configure desktop shortcut for Network Miner ####
 
@@ -85,4 +101,6 @@ Name=Network Miner
 
 Save and enter
 
-chmod a+x ~/Desktop/NetworkMiner.desktop
+chmod a+x ~/Desktop/NetworkMiner.desktop  
+
+Check to see if you can access NetworkMiner from a Sguil entry.
